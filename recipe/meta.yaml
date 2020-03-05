@@ -1,18 +1,18 @@
 {% set name = "hep_ml" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a5309ab93ef81392a8ace05b719a6a875ef51bcdcff3cb38ed4652d65527f55a
+  sha256: 0438f4d0e9f3ca95e020484774255c03c34f422df740a238ae2dbee1f76861b8
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
