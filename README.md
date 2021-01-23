@@ -5,11 +5,13 @@ Home: https://github.com/arogozhnikov/hep_ml
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hep_ml-feedstock/blob/master/LICENSE.txt)
 
 Summary: Machine Learning for High Energy Physics
 
+Development: https://github.com/arogozhnikov/hep_ml
 
+Documentation: https://github.com/arogozhnikov/hep_ml
 
 Current build status
 ====================
