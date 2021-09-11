@@ -1,5 +1,5 @@
 {% set name = "hep_ml" %}
-{% set version = "0.6.2" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 55071c5b21540e5e9cb8517148c55794669fc42345f7de4a9a0f8a4e3252f474
+  sha256: 0402037064d78f5723106b385ad5f20df8f67cb312c57cb4ce3839c5616f328e
 
 build:
   number: 0
