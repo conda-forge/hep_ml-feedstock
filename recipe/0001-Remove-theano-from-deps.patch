@@ -1,0 +1,24 @@
+From 5f60db37efe0e503026b416045f0244a901c0b39 Mon Sep 17 00:00:00 2001
+From: Chris Burr <christopher.burr@cern.ch>
+Date: Sun, 5 Mar 2023 11:59:33 +0100
+Subject: [PATCH] Remove theano from deps
+
+---
+ setup.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index 41d8aed..630f896 100644
+--- a/setup.py
++++ b/setup.py
+@@ -46,7 +46,6 @@ setup(
+         'scipy >= 0.15.0',
+         'pandas >= 0.14.0',
+         'scikit-learn >= 0.19',
+-        'theano >= 1.0.2',
+         'six',
+     ],
+ )
+-- 
+2.37.1 (Apple Git-137.1)
+
