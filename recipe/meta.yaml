@@ -1,5 +1,5 @@
 {% set name = "hep_ml" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f13635dac09ffc32ae276af9c58ebf93c593dae3da25c4e456e10e965708320b
+  sha256: 1729a13ef4c7187b05cd3723091f804ecba435f886567bd963a719ae108689b8
   patches:
     - 0001-Remove-theano-from-deps.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
