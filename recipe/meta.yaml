@@ -1,5 +1,5 @@
 {% set name = "hep_ml" %}
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1729a13ef4c7187b05cd3723091f804ecba435f886567bd963a719ae108689b8
+  sha256: 606bb1d7724a71dbecc67998ea46cb304f93a17e1b777c199abb3f7f481ebc6b
   patches:
     - 0001-Remove-theano-from-deps.patch
 
