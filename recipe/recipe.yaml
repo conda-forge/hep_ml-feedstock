@@ -1,44 +1,40 @@
-schema_version: 1
-
 context:
-  name: hep_ml
-  version: "0.8.0"
+  version: 0.8.0
 
 package:
-  name: ${{ name|lower }}
+  name: hep_ml
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/h/hep-ml/hep_ml-${{ version }}.tar.gz
   sha256: c86f19ef85090eb689a7a2c452477f45f1f1b3c3aa53df0aba4bbd077bfb8a9b
-  patches:
-    - 0001-Remove-theano-from-deps.patch
 
 build:
   number: 0
+  script: ${{ PYTHON }} -m pip install .
   noarch: python
-  script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - hatch-vcs
     - pip
-    - python ${{ python_min }}
   run:
-    - numpy >=1.9
-    - pandas >=0.14.0
     - python >=${{ python_min }}
-    - scikit-learn >=0.19
-    - scipy >=0.15.0
-    - six
+    - numpy >=1.9
+    - pandas >=1.0.0
+    - scikit-learn >=1.0
+    - scipy >=1.0.0
 
 tests:
-  - python:
-      imports:
-        - hep_ml
-        - hep_ml.experiments
-  - requirements:
-      run:
-        - python ${{ python_min }}
+- python:
+    python_version:
+      - ${{ python_min }}.*
+      - "*"
+    imports:
+      - hep_ml
+    pip_check: true
 
 about:
   license: Apache-2.0
@@ -51,4 +47,3 @@ about:
 extra:
   recipe-maintainers:
     - chrisburr
-
