@@ -1,0 +1,49 @@
+context:
+  version: 0.8.0
+
+package:
+  name: hep_ml
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/h/hep-ml/hep_ml-${{ version }}.tar.gz
+  sha256: c86f19ef85090eb689a7a2c452477f45f1f1b3c3aa53df0aba4bbd077bfb8a9b
+
+build:
+  number: 0
+  script: ${{ PYTHON }} -m pip install .
+  noarch: python
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - hatch-vcs
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - numpy >=1.9
+    - pandas >=1.0.0
+    - scikit-learn >=1.0
+    - scipy >=1.0.0
+
+tests:
+- python:
+    python_version:
+      - ${{ python_min }}.*
+      - "*"
+    imports:
+      - hep_ml
+    pip_check: true
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Machine Learning for High Energy Physics
+  homepage: https://github.com/arogozhnikov/hep_ml
+  repository: https://github.com/arogozhnikov/hep_ml
+  documentation: https://github.com/arogozhnikov/hep_ml
+
+extra:
+  recipe-maintainers:
+    - chrisburr
